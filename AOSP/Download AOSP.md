@@ -102,3 +102,37 @@ repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b 
 repo sync
 ```
 
+
+
+## 三、编译AOSP
+
+### 3.1 配置环境
+
+由于WSL2 默认不带有JDK环境，所以需要手动下载
+
+```
+sudo apt-get update
+sudo apt-get install openjdk-8-jdk
+sudo update-alternative --config java
+```
+
+
+
+### 3.2 安装依赖工具链
+
+```
+sudo apt-get install libgl1-mesa-dev g++-multilib flex bison gperf build-essential  tofrodos python-markdown libxml2-utils xsltproc  dpkg-dev libsdl1.2-dev git-core gnupg flex bison gperf build-essential  zip curl zlib1g-dev gcc-multilib g++-multilib  libc6-dev-i386  x11proto-core-dev libx11-dev  libgl1-mesa-dev libxml2-utils xsltproc unzip m4 ccache
+```
+
+
+
+### 3.3 编译代码
+
+```
+source build/envsetup.sh
+
+lunch 18
+
+make updatepackage -j8
+```
+
