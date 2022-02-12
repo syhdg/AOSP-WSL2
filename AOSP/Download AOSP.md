@@ -65,6 +65,17 @@
 
 ​	并**重启终端模拟器**。
 
+   3.第一次使用repo的时候会提示Command 'repo' not found, did you mean:
+
+​	解决办法：
+
+```
+ln ./repo /usr/bin/ 
+使用软链接放在用户path下面
+```
+
+
+
 
 
 ###  2.3下载源码
